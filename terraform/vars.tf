@@ -26,3 +26,8 @@ variable "instance_type" {
 variable "vpc_security_group_ids" {
   default = ["sg-04a7cd7b3deaa2efc"]
 }
+
+variable "key_name" {
+  default = "linuxserver"
+  type    = string
+}
