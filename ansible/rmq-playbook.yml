@@ -1,4 +1,4 @@
-- hosts: tag_RabbitMQ
+- hosts: ec2_RabbitMQ
   become: True
   tasks:
     - name: Install Rabbit MQ
