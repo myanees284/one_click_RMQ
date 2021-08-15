@@ -1,0 +1,16 @@
+plugin: aws_ec2
+regions:
+  - us-east-2
+filters: 
+   instance-state-name: running
+keyed_groups:
+  # - key: tags['node_name']
+  #   prefix: tag
+  - key: tags.node_role
+    prefix: tag
+  - key: instance_type
+    prefix: instance_type
+  - key: placement.region
+    prefix: aws_region
+  - key: tags.Name
+    prefix: ec2

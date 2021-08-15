@@ -1,0 +1,24 @@
+- hosts: tag_RabbitMQ
+  become: True
+  tasks:
+    - name: Install Rabbit MQ
+      yum:
+        name: rabbitmq-server
+        state: present
+
+    - name: Start Rabbit MQ server
+      service:
+        name: rabbitmq-server
+        enabled: yes
+        state: started
+  
+    - name: Enable Admin GUI
+      shell: rabbitmq-plugins enable rabbitmq_management
+      
+    - name: re-enable
+      shell: rabbitmq-server -detached
+    
+    - name: Create Login Credentials
+      shell: |
+            rabbitmqctl add_user sparlor welcome1
+            rabbitmqctl set_user_tags sparlor administrator
