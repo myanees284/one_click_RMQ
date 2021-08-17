@@ -11,5 +11,6 @@ resource "aws_instance" "rmq" {
   key_name                    = var.key_name
   tags = {
     Name = var.name
+    node_namee=var.name
   }
 }
