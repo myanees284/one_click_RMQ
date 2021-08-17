@@ -1,5 +1,6 @@
 - hosts: tag_RabbitMQ
   become: True
+  gather_facts: no
   tasks:
     - name: Install Rabbit MQ
       shell: |
@@ -8,7 +9,7 @@
             apt-key add rabbitmq-signing-key-public.asc
             rm rabbitmq-signing-key-public.asc
             apt-get update
-            apt-get install rabbitmq-server
+            apt-get install rabbitmq-server -y
 
     - name: Enable admin gui
       shell: rabbitmq-plugins enable rabbitmq_management
