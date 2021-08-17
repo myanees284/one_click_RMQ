@@ -4,7 +4,7 @@ regions:
 filters: 
    instance-state-name: running
 keyed_groups:
-  - key: tags.node_name
+  - key: tags.node_namee
     prefix: tag
   # - key: instance_type
   #   prefix: instance_type
